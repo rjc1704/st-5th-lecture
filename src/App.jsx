@@ -1,13 +1,16 @@
-import React from "react";
-import ResetProfile from "./components/ResetProfile";
-import UserProfile from "./components/UserProfile";
-import { UserProvider } from "./context/UserProvider";
+import { createContext, useState } from "react";
+import TodoForm from "./components/TodoForm";
+import TodoListWrapper from "./components/TodoListWrapper";
 
-const App = () => (
-  <UserProvider>
-    <UserProfile />
-    <ResetProfile />
-  </UserProvider>
-);
+export const TodoContext = createContext(null);
 
-export default App;
+export default function App() {
+  const [todos, setTodos] = useState([]);
+
+  return (
+    <TodoContext.Provider value={{ todos, setTodos }}>
+      <TodoForm />
+      <TodoListWrapper />
+    </TodoContext.Provider>
+  );
+}
