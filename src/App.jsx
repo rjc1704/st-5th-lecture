@@ -1,16 +1,16 @@
-import React from "react";
-import CountContextProvider from "./context/CountContextProvider";
-import Counter from "./components/Counter";
-import Message from "./components/Message";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import TodoList from "./pages/TodoList";
+import Auth from "./pages/Auth";
 
-const App = () => {
-  console.log("App 렌더링");
+function App() {
   return (
-    <CountContextProvider>
-      <Counter />
-      <Message />
-    </CountContextProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<TodoList />} />
+        <Route path="/auth" element={<Auth />} />
+      </Routes>
+    </BrowserRouter>
   );
-};
+}
 
 export default App;
