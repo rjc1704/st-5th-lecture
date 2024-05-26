@@ -9,7 +9,12 @@ const ResetProfile = () => {
     setUser({ name: "John", age: 30 });
   };
 
-  return <button onClick={resetUser}>Reset User</button>;
+  return (
+    <div style={{ border: "1px solid black", borderRadius: 5 }}>
+      <h2>ResetProfile</h2>
+      <button onClick={resetUser}>Reset User</button>
+    </div>
+  );
 };
 
 export default memo(ResetProfile);

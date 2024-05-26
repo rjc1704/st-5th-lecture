@@ -7,7 +7,8 @@ const UserProfile = () => {
   console.log("UserProfile render");
 
   return (
-    <div>
+    <div style={{ border: "1px solid black", borderRadius: 5 }}>
+      <h2>UserProfile</h2>
       <p>Name: {user.name}</p>
       <p>Age: {user.age}</p>
       <button onClick={() => setUser({ ...user, age: user.age + 1 })}>
