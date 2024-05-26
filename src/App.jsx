@@ -1,16 +1,16 @@
-import { createContext, useState } from "react";
-import TodoForm from "./components/TodoForm";
-import TodoListWrapper from "./components/TodoListWrapper";
+import React from "react";
+import CountContextProvider from "./context/CountContextProvider";
+import Counter from "./components/Counter";
+import Message from "./components/Message";
 
-export const TodoContext = createContext(null);
-
-export default function App() {
-  const [todos, setTodos] = useState([]);
-
+const App = () => {
+  console.log("App 렌더링");
   return (
-    <TodoContext.Provider value={{ todos, setTodos }}>
-      <TodoForm />
-      <TodoListWrapper />
-    </TodoContext.Provider>
+    <CountContextProvider>
+      <Counter />
+      <Message />
+    </CountContextProvider>
   );
-}
+};
+
+export default App;
