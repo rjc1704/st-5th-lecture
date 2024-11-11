@@ -6,8 +6,8 @@ import { addTodo } from "../redux/slices/todoSlice";
 export default function Auth() {
   console.log("Auth 페이지 렌더링");
   const isLogin = useSelector((state) => state.auth.isLogin);
-  // const store = useSelector((state) => state);
-  // const isLogin = store.auth.isLogin;
+  // const rootState = useSelector((state) => state);
+  // const isLogin = rootState.auth.isLogin;
   const dispatch = useDispatch();
 
   return (
