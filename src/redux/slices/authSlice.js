@@ -4,8 +4,9 @@ const initialState = {
   isLogin: false,
 };
 
+// "name/toggleAuth" : action type
 const authSlice = createSlice({
-  name: "todos",
+  name: "auth",
   initialState,
   reducers: {
     toggleAuth: (state) => {
